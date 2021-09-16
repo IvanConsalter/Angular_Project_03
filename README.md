@@ -27,3 +27,15 @@ See how this architecture can make our life easier when creating CRUD's in our s
 
 In angular.json configure the styles and scripts dependencies
 
+## Creating the category module
+
+- ng g m pages/categories --rounting
+
+## Creating the category-list component
+
+- ng g c pages/categories/category-list
+
+## Creating the category-form component
+
+- ng g c pages/categories/category-form
+
