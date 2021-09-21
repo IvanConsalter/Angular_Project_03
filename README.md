@@ -39,3 +39,7 @@ In angular.json configure the styles and scripts dependencies
 
 - ng g c pages/categories/category-form
 
+## Creating the category service
+
+- ng g s pages/categories/shared/category
+
