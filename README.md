@@ -50,3 +50,7 @@ In angular.json configure the styles and scripts dependencies
 ## Creating the entry service
 
 - ng g s pages/entries/shared/entry
+
+## Creating the entry-list component
+
+- ng g c pages/entries/entry-list
