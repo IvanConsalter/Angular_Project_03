@@ -43,3 +43,10 @@ In angular.json configure the styles and scripts dependencies
 
 - ng g s pages/categories/shared/category
 
+## Creating the entry module
+
+- ng g m pages/entries --rounting
+
+## Creating the entry service
+
+- ng g s pages/entries/shared/entry
