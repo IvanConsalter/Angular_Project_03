@@ -54,3 +54,7 @@ In angular.json configure the styles and scripts dependencies
 ## Creating the entry-list component
 
 - ng g c pages/entries/entry-list
+
+## Creating the entry-form component
+
+- ng g c pages/entries/entry-form
