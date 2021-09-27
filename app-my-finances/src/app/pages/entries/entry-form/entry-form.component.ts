@@ -2,6 +2,9 @@ import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 
+import { Category } from '../../categories/shared/category.model';
+import { CategoryService } from '../../categories/shared/category.service';
+
 import { Entry } from "../shared/entry.model";
 import { EntryService } from "../shared/entry.service";
 
@@ -22,6 +25,7 @@ export class EntryFormComponent implements OnInit, AfterContentChecked{
   serverErrorMessages: string[] = null;
   submittingForm: boolean = false;
   entry: Entry = new Entry();
+  categories: Array<Category>;
 
   imaskConfig = {
     mask: Number,
@@ -50,13 +54,15 @@ export class EntryFormComponent implements OnInit, AfterContentChecked{
     private entryService: EntryService,
     private route: ActivatedRoute,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private categoryService: CategoryService
   ) { }
 
   ngOnInit() {
     this.setCurrentAction();
     this.buildEntryForm();
     this.loadEntry();
+    this.loadCategories();
   }
 
   ngAfterContentChecked(){
@@ -70,6 +76,16 @@ export class EntryFormComponent implements OnInit, AfterContentChecked{
       this.createEntry();
     else // currentAction == "edit"
       this.updateEntry();
+  }
+
+  get typeOptions(): Array<any> {
+    return Object.entries(Entry.types).map(
+      ([value, text]) => {
+        return {
+          value: value,
+          text: text
+        }
+      })
   }
 
 
@@ -111,6 +127,11 @@ export class EntryFormComponent implements OnInit, AfterContentChecked{
     }
   }
 
+  private loadCategories() {
+    this.categoryService.getAll().subscribe(
+      (categories) => this.categories = categories
+    )
+  }
 
   private setPageTitle() {
     if (this.currentAction == 'new')

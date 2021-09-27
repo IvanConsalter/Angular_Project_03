@@ -31,10 +31,13 @@
       <div class="form-row">
         <!-- CAMPO TIPO -->
         <div class="form-group col-md-2">
-          <label for="type">Nome</label>
+          <label for="type">Tipo</label>
           <select name="type" id="type" formControlName="type" class="form-control">
-            <option value="renevue">Receita</option>
-            <option value="expense">Despesa</option>
+            <option 
+              *ngFor="let option of typeOptions" 
+              [value]="option.value">
+                {{ option.text }}
+            </option>
           </select>
 
           <div class="text-danger" *ngIf="entryForm.get('type').invalid && entryForm.get('type').touched">
@@ -94,6 +97,23 @@
       </div>
 
       <div class="form-row">
+        <!-- CAMPO TIPO -->
+        <div class="form-group col-md-3">
+          <label for="categoryId">Categoria</label>
+          <select name="categoryId" id="categoryId" formControlName="categoryId" class="form-control">
+            <option 
+              *ngFor="let category of categories"
+              [value]="category.id">
+                {{ category.name }}
+            </option>
+          </select>
+
+          <div class="text-danger" *ngIf="entryForm.get('categoryId').invalid && entryForm.get('categoryId').touched">
+            <div *ngIf="entryForm.get('categoryId').errors.required">dado obrigatório</div>
+          </div>
+        </div>
+        <!-- END CAMPO TIPO -->
+
         <!-- CAMPO SITUAÇÃO -->
         <div class="form-group col-md-2">
           <label for="paid">Situação</label>
@@ -121,7 +141,7 @@
         <!-- END CAMPO SITUAÇÃO -->
 
         <!-- CAMPO DESCRIÇÃO -->
-        <div class="form-group col-md-8">
+        <div class="form-group col-md-7">
           <label for="description">Descrição</label>
           <input type="text" class="form-control" id="description" formControlName="description">
         </div>
