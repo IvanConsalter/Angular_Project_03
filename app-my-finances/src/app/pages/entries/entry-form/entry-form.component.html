@@ -71,6 +71,26 @@
         </div>
         <!-- END CAMPO VALOR -->
 
+        <!-- CAMPO DATA -->
+        <div class="form-group col-md-2">
+          <label for="date">Valor</label>
+          <p-calendar 
+            id="date" 
+            formControlName="date" 
+            inputStyleClass="form-control"
+            dateType="string"
+            dateFormat="dd/mm/yy"
+            [locale]="ptBR"
+            [showButtonBar]="true"
+          >
+          </p-calendar>
+
+          <div class="text-danger" *ngIf="entryForm.get('date').invalid && entryForm.get('date').touched">
+            <div *ngIf="entryForm.get('date').errors.required">dado obrigatório</div>
+          </div>
+        </div>
+        <!-- END CAMPO DATA -->
+
       </div>
 
       <div class="form-row">
