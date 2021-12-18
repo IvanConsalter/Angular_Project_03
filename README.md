@@ -58,3 +58,25 @@ In angular.json configure the styles and scripts dependencies
 ## Creating the entry-form component
 
 - ng g c pages/entries/entry-form
+
+## Layout
+
+### Reports
+
+![reports-page](https://user-images.githubusercontent.com/50461475/146643960-9d95ec20-a1dc-4c91-8079-80ae41c206e3.png)
+
+### Categories Form
+
+![categories-form-page](https://user-images.githubusercontent.com/50461475/146643958-2b184de8-a1c3-47c7-95c9-8331a8ec9ce8.png)
+
+### Categories List
+
+![categories-list-page](https://user-images.githubusercontent.com/50461475/146643959-66ec22d0-b68b-4d13-bf1b-1e63798ac27b.png)
+
+### Entries Form
+
+![entries-form-page](https://user-images.githubusercontent.com/50461475/146643954-ed97ae8f-5299-4af5-a3a6-c1a085c06cf2.png)
+
+### Entries List
+
+![entries-list-page](https://user-images.githubusercontent.com/50461475/146643956-748a6fb3-fde8-47b1-a4b6-1cbbc7884316.png)
